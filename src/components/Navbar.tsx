@@ -27,7 +27,7 @@ const Navbar: React.FC = () => {
           <Link to="/" className="flex items-center space-x-2">
             <Code className="h-8 w-8 text-accent-orange" />
             <span className="font-mono text-xl font-bold text-gray-900 dark:text-white">
-              YourName
+              Maximillian Machado
             </span>
           </Link>
 

@@ -5,7 +5,7 @@ import { ArrowRight, Github, Linkedin, Mail, Download } from 'lucide-react';
 
 const Home: React.FC = () => {
   const [text, setText] = useState('');
-  const fullText = "Hello, I'm a Software Engineer";
+  const fullText = "Hello, I'm Maximillian Machado";
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -50,14 +50,24 @@ const Home: React.FC = () => {
         >
           {/* Hero Section */}
           <motion.div variants={itemVariants} className="mb-8">
-                         <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4">
-               <span className="font-mono text-accent-orange">
-                 {text}
-                 <span className="animate-blink">|</span>
-               </span>
-             </h1>
+            {/* Profile Image */}
+            <div className="flex justify-center mb-6">
+              <div className="relative">
+                <img
+                  src={process.env.PUBLIC_URL + '/assets/ms-headshot.jpg'}
+                  alt="Maximillian Machado"
+                  className="w-50 h-50 md:w-48 md:h-48 rounded-full object-cover border-4 border-gray-200 dark:border-gray-700 shadow-lg"
+                />
+              </div>
+            </div>
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4">
+              <span className="font-mono text-accent-orange">
+                {text}
+                <span className="animate-blink">|</span>
+              </span>
+            </h1>
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8">
-              Building digital experiences with code and creativity
+              Building interpretable deep learning models.
             </p>
           </motion.div>
 
@@ -86,7 +96,7 @@ const Home: React.FC = () => {
           <motion.div variants={itemVariants} className="mb-8">
             <div className="flex justify-center space-x-6">
               <a
-                href="https://github.com/yourusername"
+                href="https://github.com/imi-Mach"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-full bg-gray-100 dark:bg-dark-800 hover:bg-gray-200 dark:hover:bg-dark-700 transition-colors duration-200"
@@ -94,7 +104,7 @@ const Home: React.FC = () => {
                 <Github className="h-6 w-6" />
               </a>
               <a
-                href="https://linkedin.com/in/yourusername"
+                href="https://www.linkedin.com/in/maximillian-machado/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-full bg-gray-100 dark:bg-dark-800 hover:bg-gray-200 dark:hover:bg-dark-700 transition-colors duration-200"
@@ -102,7 +112,7 @@ const Home: React.FC = () => {
                 <Linkedin className="h-6 w-6" />
               </a>
               <a
-                href="mailto:your.email@example.com"
+                href="mailto:maximillian.k.machado@gmail.com"
                 className="p-3 rounded-full bg-gray-100 dark:bg-dark-800 hover:bg-gray-200 dark:hover:bg-dark-700 transition-colors duration-200"
               >
                 <Mail className="h-6 w-6" />
@@ -110,15 +120,28 @@ const Home: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* Resume Download */}
-          <motion.div variants={itemVariants}>
+          {/* Resume & CV View Buttons */}
+          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row justify-center gap-4">
+            {/* Resume from /resume.pdf */}
             <a
-              href="/resume.pdf"
-              download
-              className="btn-primary inline-flex items-center space-x-2"
+              href="https://drive.google.com/file/d/1xygJjIkD2S79yGy-wO5vncyqmj3seMsd/view"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary w-full sm:w-auto inline-flex justify-center items-center space-x-2"
             >
               <Download className="h-4 w-4" />
-              <span>Download Resume</span>
+              <span>View Resume</span>
+            </a>
+
+            {/* CV from Google Drive */}
+            <a
+              href="https://drive.google.com/file/d/1z0G3Edj7NwNkVOY2S-N0BdxyWPIwwzcH/view"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary w-full sm:w-auto inline-flex justify-center items-center space-x-2"
+            >
+              <Download className="h-4 w-4" />
+              <span>View CV</span>
             </a>
           </motion.div>
         </motion.div>
